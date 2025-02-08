@@ -16,13 +16,10 @@
         "flarum-extension": {
             "title": "Anchor BBCode",
             "description": "Adds anchor support to BBCode in Flarum",
-            "icon": "fas fa-anchor",
-            "authors": [
-                {
-                    "name": "Angry Cat",
-                    "homepage": "https://github.com/3l0iKoT"
-                }
-            ]
+            "icon": "fas fa-anchor"
         }
+    },
+    "flarum": {
+        "extend": "extend.php"
     }
 }
