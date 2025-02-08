@@ -8,18 +8,15 @@ use s9e\TextFormatter\Configurator;
 return [
     (new Extend\Formatter)
         ->configure(function (Configurator $config) {
-            // Добавляем кастомный BBCode тег для якоря
-            $config->BBCodes->addCustom(
-                '[anchor={TEXT}]',
-                '<span id="{TEXT}"></span>',
-                ['parseContent' => false]
-            );
-
-            // Добавляем кастомный BBCode тег для ссылки на якорь
-            $config->BBCodes->addCustom(
-                '[link={TEXT1}]{TEXT2}[/link]',
-                '<a href="#{TEXT1}">{TEXT2}</a>',
-                ['parseContent' => false]
+            $configurator = new Configurator();
+            $configurator->BBCodes->addCustom(
+                '[anchor={IDENTIFIER}]',
+                '<span id="{IDENTIFIER}"></span>'
+            )->filterChain->append('strtolower')->append('urlencode');
+            
+            $configurator->BBCodes->addCustom(
+                '[link={IDENTIFIER}]{TEXT}[/link]',
+                '<a href="#{IDENTIFIER}">{TEXT}</a>'
             );
         })
 ];

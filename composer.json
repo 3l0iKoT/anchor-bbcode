@@ -3,6 +3,7 @@
     "description": "Adds anchor support to BBCode in Flarum",
     "type": "flarum-extension",
     "version": "1.0.0",
+    "license": "MIT",
     "require": {
         "flarum/core": "^1.2.0"
     },
