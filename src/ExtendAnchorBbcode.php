@@ -1,6 +1,6 @@
 <?php
 
-namespace YourName\AnchorBbcode;
+namespace AngryCat\AnchorBbcode;
 
 use Flarum\Extend;
 use s9e\TextFormatter\Configurator;
